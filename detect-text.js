@@ -10,7 +10,7 @@ const client = new vision.ImageAnnotatorClient();
 
 
 // Change the name of the file for which you want to run the text detection
-const fileName = './resources/form2.jpeg';
+const fileName = './resources/viet3.png';
 
 // Read a local image as a text document
 
