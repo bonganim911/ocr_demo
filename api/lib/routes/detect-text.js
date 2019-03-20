@@ -5,6 +5,8 @@ const Vision = require('@google-cloud/vision');
 const Path = require('path');
 const Fs = require('fs');
 
+const Helpers = require('../helpers')();
+
 
 
 // Read a local image as a text document
@@ -24,8 +26,15 @@ const detect = async (fileName) => {
     const fullTextAnnotation = result.fullTextAnnotation;
 
     console.log(`Full text: ${fullTextAnnotation.text}`);
+    const spillted = fullTextAnnotation.text && fullTextAnnotation.text.split('\n');
+    spillted.forEach((e, i) => {
+
+        console.log(`${e} :  ${i}`);
+    });
+
     return {
-        text: fullTextAnnotation.text
+        text: fullTextAnnotation.text,
+        data: Helpers.prepareResponse(spillted)
     };
 
 };
@@ -42,7 +51,8 @@ module.exports = {
 
                 return h.response({
                     success: true,
-                    text: response
+                    text: response.text,
+                    data: response.data
                 }).code(200);
             }
             catch (e) {
