@@ -6,7 +6,6 @@ const Path = require('path');
 const Fs = require('fs');
 
 const Helpers = require('../helpers')();
-const Detect = require('../helpers/detect');
 
 
 
@@ -40,27 +39,4 @@ const detect = async (fileName) => {
 
 };
 
-module.exports = {
-    method: 'GET',
-    path: '/detect-text/{fileName}',
-    options: {
-        handler: async (request, h) => {
-
-            const { fileName } = request.params;
-            try {
-                const response =  await Detect(fileName);
-
-                return h.response({
-                    success: true,
-                    text: response.text,
-                    data: response.data
-                }).code(200);
-            }
-            catch (e) {
-
-                return  h.response({ success: false, message:` 😵 Something went wrong. 👾Wild guess Please check file name` }).code(400);
-            }
-
-        }
-    }
-};
+module.exports = detect;
