@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "detect:text": "node detect-text",
-    "conf:check" : "node allokay",
+    "conf:check": "node allokay",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

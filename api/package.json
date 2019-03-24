@@ -14,17 +14,18 @@
     "test": "lab -a code -L",
     "lint": "eslint .",
     "detect:text": "node detect-text",
-    "conf:check" : "node allokay"
-    
+    "conf:check": "node allokay"
   },
   "dependencies": {
+    "@google-cloud/vision": "^0.25.0",
     "boom": "7.x.x",
+    "cors": "^2.8.5",
     "joi": "^14.3.1",
     "knex": "^0.16.3",
+    "nodemon": "^1.18.10",
     "objection": "^1.6.3",
     "schwifty": "^4.2.0",
-    "sqlite3": "^4.0.6",
-    "@google-cloud/vision": "^0.25.0"
+    "sqlite3": "^4.0.6"
   },
   "devDependencies": {
     "code": "5.x.x",

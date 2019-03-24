@@ -8,6 +8,7 @@ const handleFileUpload = async (file) => {
 
     try {
         const uploadDir = Path.join(__dirname,'..','..', 'uploads');
+        console.log('upload directory', uploadDir);
         const fileExtn = file.hapi.filename.split('.').pop();
         const fileName = `${Date.now()}.${fileExtn}`;
         const data = file._data;

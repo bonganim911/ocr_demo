@@ -4,6 +4,7 @@ const Glue = require('glue');
 const Manifest = require('./manifest');
 const Schwifty = require('schwifty');
 
+
 exports.deployment = async (start) => {
 
     const manifest = Manifest.get('/');
@@ -33,6 +34,7 @@ exports.deployment = async (start) => {
 
     console.log(`Server started at ${server.info.uri}`);
 
+    console.log('server', server);
     return server;
 };
 
