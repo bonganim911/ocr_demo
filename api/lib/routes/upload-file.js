@@ -37,6 +37,7 @@ module.exports = [
 
                 try {
                     const response =  await handleFileUpload(payload.file);
+                    console.log('response', response);
 
                     return h.response({
                         success: true,
