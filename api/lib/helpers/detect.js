@@ -33,6 +33,7 @@ const detect = async (fileName) => {
     });
 
     return {
+        filePath: file,
         text: fullTextAnnotation.text,
         data: Helpers.prepareResponse(spillted)
     };
