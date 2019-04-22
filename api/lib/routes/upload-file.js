@@ -10,6 +10,8 @@ const handleFileUpload = async (file) => {
         const uploadDir = Path.join(__dirname,'..','..', 'uploads');
         console.log('upload directory', uploadDir);
         const fileExtn = file.hapi.filename.split('.').pop();
+        // console.log('file', file);
+        // const fileExtn = file.split('.').pop();
         const fileName = `${Date.now()}.${fileExtn}`;
         const data = file._data;
         const filePath = `${uploadDir}/${fileName}`;
@@ -34,6 +36,7 @@ module.exports = [
             handler:  async (request, h) => {
 
                 const { payload } = request;
+                console.log('check payload', payload.filename);
 
                 try {
                     const response =  await handleFileUpload(payload.file);
