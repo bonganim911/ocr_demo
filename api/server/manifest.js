@@ -18,7 +18,7 @@ module.exports = new Confidence.Store({
         },
         routes: {
         cors: {
-          origin: ['http://3.18.113.163:3000'],
+          origin: ['*'],
         }
       },
         debug: {
