@@ -34,7 +34,7 @@ exports.deployment = async (start) => {
 
     console.log(`Server started at ${server.info.uri}`);
 
-    console.log('server', server);
+    // console.log('server', server);
     return server;
 };
 
